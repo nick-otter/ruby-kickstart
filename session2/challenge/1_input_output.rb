@@ -7,9 +7,9 @@
 # Standard input will be like "9 2\n" and will expect you to print
 # "11\n7\n18\n" to standard output.
 
-def sum_difference_product(number = gets.chomp)
+def sum_difference_product(number = gets)
   # your code goes here
-  arr = number.split('')
+  arr = number.split
   arr_nospace = arr.map {|x| Integer(x) rescue nil}.compact
 
   puts arr_nospace[0] + arr_nospace[1]
