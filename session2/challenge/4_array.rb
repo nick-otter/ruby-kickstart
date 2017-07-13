@@ -7,3 +7,14 @@
 # get_squares [25, 4, 9, 6, 50, 16, 5] # => [4, 5]
 
 # This time you will have to define the method, it's called: get_squares
+def get_squares(arr)
+  arr.sort.select {|n| arr.include? (n*n)}
+end
+
+# Another solution
+# def get_squares(arr)
+# result = []
+# great use of if! don't have to use with else, start with action statement then conditional clause
+# arr.sort.each { |x| result << x if arr.include? (x**2) }
+# result
+# end
