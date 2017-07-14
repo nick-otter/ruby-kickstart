@@ -21,6 +21,28 @@
 # f.to_f               # => 0.5
 
 class Fraction
+  #attr_accessor == reader writer method
+  #Include setter methods called numerator and denominator
+  attr_accessor :numerator, :denominator
+  #that allow the user to change these methods
+  def initialize(numerator, denominator)
+    @numerator = numerator
+    @denominator = denominator
+  end
+
+  def to_f
+    @numerator.to_f / @denominator.to_f
+  end
+
+  def lowest
+    x = gcd(@numerator, @denominator)
+    Fraction.new(@numerator / x, @denominator / x)
+  end
+
+  def to_s
+    "#{@numerator}/#{@denominator}"
+  end
+
   def gcd(a,b)
     return a if b == 0
     gcd(b, a%b)
