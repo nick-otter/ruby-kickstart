@@ -8,3 +8,20 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
+staircase(num)
+
+hash = Hash.new([])
+
+num.times do |n|
+  n += 1
+  hash[n] = [] if n.odd?
+end
+
+hash.each do |k, v|
+  array =[]
+  1.upto(k) { |x| array.push(x) if x.even? && x < k }
+  hash[k] = array
+end
+
+  hash
+end
