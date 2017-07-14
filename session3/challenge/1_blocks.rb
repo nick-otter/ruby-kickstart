@@ -2,4 +2,7 @@
 # and returns an array of their results.
 #
 # reverse_map(1, 2, 3) { |i| i * 2 }      # => [6, 4, 2]
-
+              # &block is passing a block as a proc to use
+def reverse_map(*num, &block)
+  num.reverse.map(&block)
+end
