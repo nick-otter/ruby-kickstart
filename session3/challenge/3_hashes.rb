@@ -7,6 +7,8 @@
 # Example:
 # word_count "The dog and the cat" # => {"the" => 2, "dog" => 1, "and" => 1, "cat" => 1}
 
+#WHITE FLAG MESSAGE
+
 def word_count(string)
   hash = {}
   downcase_words = string.split.select {|word| word == word.downcase}
