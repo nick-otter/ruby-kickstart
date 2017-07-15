@@ -1,3 +1,5 @@
+#WHITE FLAG MESSAGE
+
 # You have two different problems to solve, you must get which one it is from a hash
 # The default value for the hash should be :count_clumps
 # If no hash is provided, choose count_clumps
