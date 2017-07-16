@@ -30,5 +30,12 @@
 # end
 
 
-def array_init
+def array_init(param = 5, &block)
+  if block
+    arr = [](param) { |i| block.call i}
+  else
+    arr = [](param)
+    arr.each_with_index {|item, index| arr[index] = (item * 100).to_s }
+  end
+  arr
 end
