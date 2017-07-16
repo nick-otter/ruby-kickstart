@@ -29,5 +29,15 @@
 # create it from scratch :)
 
 
-def pathify
+def pathify(h = Hash.new)
+  return h.map { |i| "/#{i}"} if h.is_a? Array
+
+  arr = Array.new
+  h.each do |k, v|
+    parent = "/#{k}"
+    #recursive
+    child = pathify(v)
+    child.each { |child| arr << (parent + child) }
+  end
+  arr
 end
