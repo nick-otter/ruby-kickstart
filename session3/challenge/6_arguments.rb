@@ -16,4 +16,13 @@
 # match_maker true,  true,  true, false, nil    # => [false, false]
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
-
+                #variable length argument
+def match_maker(*args)
+  arr = Array.new
+  first_param = args.first
+  args.each_index do |index|
+    next if index.even?
+    arr.push first_param ? !!args[index] != !!args[index + 1] : !!args[index] == !!args[index + 1]
+  end
+  arr
+end
