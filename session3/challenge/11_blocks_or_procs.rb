@@ -32,10 +32,10 @@
 
 def array_init(param = 5, &block)
   if block
-    arr = [](param) { |i| block.call i}
+    arr = Array.new(param) { |i| block.call i}
   else
-    arr = [](param)
-    arr.each_with_index {|item, index| arr[index] = (item * 100).to_s }
+    arr = Array.new(param)
+    arr.each_with_index {|item, index| arr[index] = (item*100).to_s } 
   end
   arr
 end
