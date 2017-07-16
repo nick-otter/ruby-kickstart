@@ -26,14 +26,21 @@
 
 
 class Person
-  attr_accessor :name
+  #getters and setters
+  attr_accessor :name, :age, :quote
 
-  def initialize(&initializer)
-    @initializer = initializer
-    initializer.call self
+  def initialize(&block, hash)
+    @name = hash[:name]
+    @age = hash[:age]
+    @quote = hash[:quote]
+
+  if block
+    @block = block
+    block.call(self)
   end
+end
 
   def reinit
-    @initializer.call self
+    block.call self
   end
 end
