@@ -7,3 +7,13 @@
 #
 # print_list_in_reverse head   # >> "1\n2\n"
 
+def print_list_in_reverse(list)
+  arr = Array.new
+  while list
+    # adds [:data] key's value to end of the array
+    arr.push list[:data]
+    # assigns [:next] key's value to list
+    list = list[:next]
+  end
+  puts arr.reverse
+end
