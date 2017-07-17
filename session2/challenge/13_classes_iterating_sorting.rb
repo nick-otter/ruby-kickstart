@@ -71,16 +71,16 @@ class User
   attr_accessor :username, :blogs
 
   def initalize(username)
-    @username = username
-    @blogs = []
+    self.username = username
+    self.blogs = []
   end
   # it should have a method add_blog which accepts a date and text
   def add_blog(date, text)
     blog = Blog.new(date, self, text)
     @blogs.push(blog)
     # it should have a method blogs which returns an array of all blogs the user has written
-                            # they should be in reverse chronological order (newest first)
-    @blogs = blogs.sort_by { |blog| blog.date}.reverse
+                              # they should be in reverse chronological order (newest first)
+    self.blogs = blogs.sort_by { |blog| blog.date}.reverse
     blog
    end
   end

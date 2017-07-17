@@ -24,15 +24,14 @@
 # USER:     BYE
 
 def deaf_grandma
-  string = gets.chomp
-  rescue nil
+  string = ""
   while string != "BYE"
-      if string == string.downcase or string == ""
-        "HUH?! SPEAK UP, SONNY!"
-        string = gets.chomp
+      string = gets.chomp
+      break if string == "BYE"
+      if string != string.upcase || string == ""
+        puts "HUH?! SPEAK UP, SONNY!"
       else string == string.upcase
-          "NO, NOT SINCE 1938!"
-          string = gets.chomp
+          puts "NO, NOT SINCE 1938!"
    end
  end
 end
