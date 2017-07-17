@@ -52,5 +52,15 @@
 #   end
 # end       # => ["a", "m", "r", 1, 3, 4, 9, 2.5, 9.0, 25.8]
 
-def your_sort
+def your_sort(arr, &block)
+  #if block is false, nil or undefined then evaluate Proc.new and set block to the result.
+                      #<=> returns 1,0, or -1, taking left first so if a < b return 1, if a = b return 0 etc.
+  block ||= Proc.new { |a, b| a <=> b }
+
+  arr.each_index do |i1|
+    arr.each_index do |i2|
+      order = block.call(arr[i1], arr[i2])
+      arr[i1], arr[i2] = arr[i2], arr[i1] if order < 0
+    end
+  end
 end
